@@ -10,11 +10,11 @@ variable "aws_profile" {
   default     = "tfsys"
 }
 
-#variable "aws_accoount_id" {
-#  type        = number
-#  description = ""
-#  default     = ""
-#}
+variable "aws_account_id" {
+  type        = number
+  description = ""
+  default     = 699622462966
+}
 
 variable "service_name" {
   type        = string
