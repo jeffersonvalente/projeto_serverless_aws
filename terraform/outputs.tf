@@ -32,6 +32,3 @@ output "lambda_dynamo_url" {
   value = aws_lambda_function.dynamo.invoke_arn
 }
 
-output "api_url" {
-  value = aws_api_gateway_deployment.this.invoke_url
-}
