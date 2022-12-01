@@ -40,7 +40,7 @@ resource "aws_lambda_function" "s3" {
 }
 
 data "archive_file" "dynamo" {
-  type = zip
+  type        = "zip"
   source_file = "${local.lambdas_path}/dynamo/index.js"
   output_path = "files/dynamo-artefact.zip"
 }
