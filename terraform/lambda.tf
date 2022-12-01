@@ -38,6 +38,13 @@ resource "aws_lambda_function" "s3" {
   layers = [aws_lambda_layer_version.joi.arn]
   tags   = local.common_tags
 }
+resource "aws_lambda_permission" "s3" {
+  statement_id  = "AllowExecutionFromS3Bucket"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.s3.arn
+  principal     = "s3.amazonaws.com"
+  source_arn    = aws_s3_bucket.todo.arn
+}
 
 data "archive_file" "dynamo" {
   type        = "zip"
