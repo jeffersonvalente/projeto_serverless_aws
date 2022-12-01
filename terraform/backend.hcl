@@ -1,0 +1,5 @@
+bucket         = "tfstate-699622462966"
+key            = "projeto_serveless/terraform.tfstate"
+region         = "us-east-1"
+profile        = "tfsys"
+dynamodb_table = "tflock-tfstate-699622462966"
