@@ -41,7 +41,7 @@ exports.handler = async (event) => {
     try {
         switch (method) {
             case 'DELETE':
-                res = await dynamo.delete({ ...params, Key: { TodoId: querystring.todoid } }).promise()
+                res = await dynamo.delete({ ...params, Key: { AppServerlessId: querystring.AppServerlessId } }).promise()
                 break;
             case 'GET':
                 res = await dynamo.scan(params).promise()
@@ -52,7 +52,7 @@ exports.handler = async (event) => {
             case 'PUT':
                 res = await dynamo.update({
                     TableName: table,
-                    Key: { TodoId: querystring.todoid },
+                    Key: { AppServerlessId: querystring.AppServerlessId },
                     UpdateExpression: 'set #a = :x',
                     ExpressionAttributeNames: { '#a': 'Done' },
                     ExpressionAttributeValues: { ':x':  data.Done }

@@ -7,7 +7,7 @@ const S3 = new AWS.S3()
 const SNS = new AWS.SNS()
 
 const schema = Joi.object().keys({
-    TodoId: Joi.string().required(),
+    AppServerlessId: Joi.string().required(),
     Task: Joi.string().required(),
     Done: Joi.string()
 })
