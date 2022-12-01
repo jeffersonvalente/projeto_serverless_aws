@@ -10,21 +10,21 @@ variable "aws_profile" {
   default     = "tfsys"
 }
 
-variable "aws_accoount_id" {
-  type = number
-  description = ""
-  default = ""
-}
+#variable "aws_accoount_id" {
+#  type        = number
+#  description = ""
+#  default     = ""
+#}
 
-variable "service_name"{
-type = string
-description = ""
-default = "ServerlessApp"
+variable "service_name" {
+  type        = string
+  description = ""
+  default     = "ServerlessApp"
 
 }
 
 variable "service_domain" {
-  type = string
+  type        = string
   description = ""
-  default = "api-serverless"
+  default     = "api-serverless"
 }
