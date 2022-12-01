@@ -9,6 +9,6 @@ output "cognito_client_id" {
 output "cognito_url" {
   value = "https://${aws_cognito_user_pool_domain.this.domain}.auth.${var.aws_region}.amazoncognito.com"
 }
-#output "bucket_name" {
-#  value = aws_s3_bucket.todo.bucket
-#}
+output "bucket_name" {
+  value = aws_s3_bucket.todo.bucket
+}
