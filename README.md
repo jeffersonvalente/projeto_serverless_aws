@@ -1,104 +1,99 @@
-# Projeto Serverless AWS: Gerenciador de Tarefas 📝☁️
+Gerenciador de Tarefas com Arquitetura Serverless na AWS
 
-Este projeto implementa uma **API Serverless** para gerenciar uma lista de tarefas (*to-do list*) na **AWS**. A arquitetura utiliza diversos serviços da AWS, incluindo **API Gateway**, **Cognito**, **DynamoDB**, **Lambda**, **CloudWatch**, **S3** e **SNS**, demonstrando uma abordagem moderna e escalável para aplicações web.
+Esse projeto nasce de uma necessidade comum em ambientes modernos:
+criar APIs que escalam, integram com serviços críticos da nuvem e não viram dor de cabeça na operação.
 
----
-
-## 🛠️ Funcionalidades
-
-- **Operações CRUD:** Criação, atualização, listagem e exclusão de itens da lista de tarefas via métodos HTTP (POST, PUT, GET, DELETE).
-- **Autenticação Segura:** Implementada com Amazon Cognito para gerenciar usuários e permissões.
-- **Processamento Assíncrono:** Upload de arquivos no S3 que disparam funções Lambda para processamento e armazenamento no DynamoDB.
-- **Notificações:** Utilização do SNS para envio de notificações ou integração com outros serviços.
+Aqui, implementei uma API completa para gerenciamento de tarefas (to-do list) usando uma stack 100% serverless da AWS — com segurança, automação e rastreabilidade.
 
 ---
 
-## 📋 Pré-requisitos
+O que esse projeto entrega
 
-- **Conta AWS:** Com permissões para criar e gerenciar os serviços mencionados.
-- **Node.js Instalado:** Para desenvolvimento e deploy das funções Lambda.
-- **AWS CLI Configurado:** Para interação com os serviços AWS via linha de comando.
-- **Terraform Instalado:** Para provisionamento da infraestrutura como código.
-
----
-
-## 🚀 Como Configurar e Executar o Projeto
-
-1. **Clone o Repositório:**
-
-   ```bash
-   git clone https://github.com/jeffersonvalente/projeto_serverless_aws.git
-   cd projeto_serverless_aws
-   ```
-
-2. **Configure as Credenciais AWS:**
-
-   Certifique-se de que o AWS CLI esteja configurado com as credenciais apropriadas:
-
-   ```bash
-   aws configure
-   ```
-
-3. **Provisione a Infraestrutura com Terraform:**
-
-   No diretório `terraform`, inicialize e aplique as configurações:
-
-   ```bash
-   cd terraform
-   terraform init
-   terraform apply
-   ```
-
-   Revise e confirme as alterações para criar os recursos na AWS.
-
-4. **Implante as Funções Lambda:**
-
-   No diretório `app`, instale as dependências e faça o deploy:
-
-   ```bash
-   cd ../app
-   npm install
-   serverless deploy
-   ```
-
-5. **Teste a API:**
-
-   Utilize ferramentas como Postman ou cURL para interagir com os endpoints da API, conforme definidos no API Gateway.
+- API REST com operações completas (POST, GET, PUT, DELETE) via API Gateway
+- Autenticação segura com Cognito, controlando acesso desde o início
+- Processamento assíncrono com Lambda e S3, disparando eventos automaticamente após uploads
+- Persistência com DynamoDB e notificações via SNS integradas a qualquer fluxo externo
 
 ---
 
-## 🗂️ Estrutura do Projeto
+Por que essa arquitetura
 
-- `app/`: Contém o código das funções Lambda e configurações do Serverless Framework.
-- `terraform/`: Arquivos de configuração para provisionamento da infraestrutura na AWS.
-- `README.md`: Documentação do projeto.
+A escolha por uma stack serverless foi pensada para:
 
----
+- Reduzir esforço operacional
+- Escalar sob demanda, sem precisar configurar autoscaling
+- Garantir segurança no controle de usuários
+- Manter o custo alinhado ao uso real
 
-## 📈 Benefícios Técnicos
-
-- **Escalabilidade:** Arquitetura serverless que se ajusta automaticamente à demanda.
-- **Manutenção Simplificada:** Infraestrutura como código facilita replicação e modificações.
-- **Custo-Efetivo:** Pagamento baseado no uso real dos recursos.
-- **Segurança:** Gerenciamento robusto de usuários e permissões com Cognito.
+Tudo isso com infraestrutura como código (Terraform), facilitando a replicação, versionamento e auditoria.
 
 ---
 
-## 🤝 Contribuições
+Pré-requisitos
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests com sugestões de melhorias ou correções.
+Antes de iniciar, garanta que você tenha:
 
----
-
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+- Conta AWS com permissões apropriadas
+- AWS CLI configurado (aws configure)
+- Node.js e Terraform instalados
 
 ---
 
-## 📞 Contato
+Como rodar
 
-Para dúvidas ou suporte, entre em contato:
+# clone o projeto
+git clone https://github.com/jeffersonvalente/projeto_serverless_aws.git
+cd projeto_serverless_aws
 
-- **Autor:** Jefferson Valente
-- **LinkedIn:** [jefferson-hoy-valente](https://www.linkedin.com/in/jefferson-hoy-valente/)
+# configure as credenciais AWS
+aws configure
+
+# provisione a infraestrutura
+cd terraform
+terraform init
+terraform apply
+
+# implante a aplicação
+cd ../app
+npm install
+serverless deploy
+
+---
+
+Estrutura do repositório
+
+projeto_serverless_aws/
+├── app/         # Código das funções Lambda
+├── terraform/   # Infraestrutura como código
+└── README.md    # Este documento
+
+---
+
+Tecnologias usadas
+
+- API Gateway para expor a API REST
+- Lambda para processamento serverless
+- DynamoDB como base de dados NoSQL
+- Cognito para autenticação
+- S3 + SNS para upload, evento e notificação
+- Terraform para IaC
+- Serverless Framework para deploy das funções
+
+---
+
+Sobre o projeto
+
+Esse projeto faz parte dos meus estudos aplicados em arquitetura serverless com foco em:
+
+- Produtividade do time
+- Baixo custo de operação
+- Facilidade de manutenção
+- Padronização via código
+
+---
+
+Contato
+
+Se quiser conversar sobre arquitetura, automação ou tirar dúvidas, me chama:
+
+LinkedIn: https://www.linkedin.com/in/jefferson-hoy-valente/
