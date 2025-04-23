@@ -61,12 +61,12 @@ serverless deploy
 ---
 
 Estrutura do repositório
-
+```plaintext
 projeto_serverless_aws/
 ├── app/         # Código das funções Lambda
 ├── terraform/   # Infraestrutura como código
 └── README.md    # Este documento
-
+```
 ---
 
 Tecnologias usadas
