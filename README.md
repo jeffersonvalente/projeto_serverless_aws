@@ -40,7 +40,7 @@ Antes de iniciar, garanta que você tenha:
 ---
 
 Como rodar
-
+```plaintext
 # clone o projeto
 git clone https://github.com/jeffersonvalente/projeto_serverless_aws.git
 cd projeto_serverless_aws
@@ -57,7 +57,7 @@ terraform apply
 cd ../app
 npm install
 serverless deploy
-
+```
 ---
 
 Estrutura do repositório
